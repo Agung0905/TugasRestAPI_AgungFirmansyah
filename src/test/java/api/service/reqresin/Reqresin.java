@@ -1,5 +1,4 @@
 package api.service.reqresin;
-import io.restassured.internal.ResponseSpecificationImpl;
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONObject;
@@ -13,7 +12,7 @@ public class Reqresin {
         SerenityRest.get(REQRESIN_BASEURL + "/api/users?page=2");
     }
 
-    //GetUser
+    //GetUser single
     public void getSingleUser (){
         SerenityRest.get(REQRESIN_BASEURL + "/api/users/2");
     }
