@@ -3,7 +3,6 @@ import api.service.reqresin.Reqresin;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
