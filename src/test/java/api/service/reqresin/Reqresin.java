@@ -41,6 +41,18 @@ public class Reqresin {
                 .post(REQRESIN_BASEURL + "/api/login");
     }
 
+    // Post Login Fail
+    public void postLoginFail () {
+        JSONObject bodyJson = new JSONObject();
+        bodyJson.put ("email", "sydney@fife");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .post(REQRESIN_BASEURL + "/api/login");
+    }
+
+
     // Post Register
     public void postRegister () {
         JSONObject bodyJson = new JSONObject();
@@ -69,5 +81,17 @@ public class Reqresin {
     public void DeleteUser (){
        Response response = SerenityRest.delete(REQRESIN_BASEURL + "/api/users/2");
         Assert.assertEquals(response.statusCode(), 204);
+    }
+
+    // PATCH Update
+    public void UpdatePatch() {
+        JSONObject bodyJson = new JSONObject();
+        bodyJson.put ("name", "morpheus");
+        bodyJson.put ("job", "zion resident");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .put(REQRESIN_BASEURL + "/api/users/2");
     }
 }

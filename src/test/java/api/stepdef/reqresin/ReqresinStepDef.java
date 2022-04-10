@@ -56,4 +56,14 @@ public class ReqresinStepDef {
     public void userSendGETSingleUsersRequestToReqresin() {
         reqresin.getSingleUser();
     }
+
+    @When("user send POST login request to reqresin and faild email")
+    public void userSendPOSTLoginRequestToReqresinAndFaildEmail() {
+        reqresin.postLoginFail();
+    }
+
+    @When("user send PATCH Update request to reqresin")
+    public void userSendPATCHUpdateRequestToReqresin() {
+        reqresin.UpdatePatch();
+    }
 }

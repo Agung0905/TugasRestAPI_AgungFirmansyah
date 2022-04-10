@@ -30,3 +30,13 @@
       When user send Delete user request to reqresin
       Then response status code should be 204
       #And response structure should match json schema "delete.json"
+    
+    Scenario: Failed POST Login
+      When user send POST login request to reqresin and faild email
+      Then response status code should be 400
+      And response structure should match json schema "unsuccess-login.json"
+
+    Scenario: Success PATCH update
+      When user send PATCH Update request to reqresin
+      Then response status code should be 200
+      And response structure should match json schema "update-user-patch.json"
