@@ -9,7 +9,11 @@ public class Reqresin {
 
     //GetUser
     public void getListUser (){
-        SerenityRest.get(REQRESIN_BASEURL + "/api/users?page=2");
+        Response response = SerenityRest.given()
+                .queryParam("page", "1")
+                .get(REQRESIN_BASEURL + "/api/users");
+
+        System.out.println(response.body().prettyPrint());
     }
 
     //GetUser single
