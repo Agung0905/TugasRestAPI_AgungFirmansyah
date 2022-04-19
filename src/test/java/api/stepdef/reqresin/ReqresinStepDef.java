@@ -10,11 +10,6 @@ public class ReqresinStepDef {
 
     Reqresin reqresin = new Reqresin();
 
-    @When("user send GET users request to reqresin")
-    public void userSendGETUsersRequestToReqresin() {
-        reqresin.getListUser();
-    }
-
     @Then("response status code should be {int}")
     public void responseStatusCodeShouldBe (int statusCode) {
         restAssuredThat(response -> response.statusCode(statusCode));
@@ -32,38 +27,22 @@ public class ReqresinStepDef {
         reqresin.postLogin();
     }
 
-    @When("user send PUT Update request to reqresin")
-    public void userSendPUTUpdateRequestToReqresin() {
-        reqresin.putUpdate();
-    }
 
     @When("user send POST register request to reqresin")
     public void userSendPOSTRegisterRequestToReqresin() {
         reqresin.postRegister();
     }
 
-    @When("user send Delete user request to reqresin")
-    public void userSendDeleteUserRequestToReqresin() {
-        reqresin.DeleteUser();
-    }
 
     @When("user send POST Create users request to reqresin")
     public void userSendPOSTCreateUsersRequestToReqresin() {
         reqresin.postCreate();
     }
 
-    @When("user send GET Single users request to reqresin")
-    public void userSendGETSingleUsersRequestToReqresin() {
-        reqresin.getSingleUser();
-    }
 
     @When("user send POST login request to reqresin and faild email")
     public void userSendPOSTLoginRequestToReqresinAndFaildEmail() {
         reqresin.postLoginFail();
     }
 
-    @When("user send PATCH Update request to reqresin")
-    public void userSendPATCHUpdateRequestToReqresin() {
-        reqresin.UpdatePatch();
-    }
 }

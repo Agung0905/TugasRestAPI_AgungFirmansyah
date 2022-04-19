@@ -7,14 +7,7 @@ import org.junit.Assert;
 public class Reqresin {
     private static final String REQRESIN_BASEURL = "https://reqres.in";
 
-    //GetUser
-    public void getListUser (){
-        Response response = SerenityRest.given()
-                .queryParam("page", "1")
-                .get(REQRESIN_BASEURL + "/api/users");
 
-        System.out.println(response.body().prettyPrint());
-    }
 
     //GetUser single
     public void getSingleUser (){
@@ -69,33 +62,6 @@ public class Reqresin {
                 .post(REQRESIN_BASEURL + "/api/register");
     }
 
-    // Put Update
-    public void putUpdate() {
-        JSONObject bodyJson = new JSONObject();
-        bodyJson.put ("name", "morpheus");
-        bodyJson.put ("job", "zion resident");
 
-        SerenityRest.given()
-                .header("Content-type", "application/json")
-                .body(bodyJson.toString())
-                .put(REQRESIN_BASEURL + "/api/users/2");
-    }
 
-    // Delete User
-    public void DeleteUser (){
-       Response response = SerenityRest.delete(REQRESIN_BASEURL + "/api/users/2");
-        Assert.assertEquals(response.statusCode(), 204);
-    }
-
-    // PATCH Update
-    public void UpdatePatch() {
-        JSONObject bodyJson = new JSONObject();
-        bodyJson.put ("name", "morpheus");
-        bodyJson.put ("job", "zion resident");
-
-        SerenityRest.given()
-                .header("Content-type", "application/json")
-                .body(bodyJson.toString())
-                .put(REQRESIN_BASEURL + "/api/users/2");
-    }
 }
